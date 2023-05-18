@@ -29,6 +29,9 @@ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMAAAKEY
 export AWS_DEFAULT_REGION=us-west-2
 echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
 EOF
+  tags = {
+    yor_trace = "d6c0252a-acca-48a8-bc75-d1801429542f"
+  }
 }
 
 
@@ -36,11 +39,17 @@ EOF
 resource "aws_ebs_volume" "ebs-web-storage" {
   availability_zone = "${var.region}a"
   size              = 40
+  tags = {
+    yor_trace = "a4630293-72d7-4c76-ba55-8a62442615ae"
+  }
 }
 
 
 resource "aws_s3_bucket" "test_bucket" {
   bucket        = "my-test-bucket"
   force_destroy = true
-  acl = "public-read"
+  acl           = "public-read"
+  tags = {
+    yor_trace = "d2ccf223-9682-430f-be93-96e8245719a8"
+  }
 }

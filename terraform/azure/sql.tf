@@ -5,6 +5,9 @@ resource "azurerm_sql_server" "example" {
   version                      = "12.0"
   administrator_login          = "admin"
   administrator_login_password = "Aa12345678"
+  tags = {
+    yor_trace = "7fdb05e4-ebd9-4e2e-88f7-2e327427e158"
+  }
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "example" {
@@ -37,4 +40,7 @@ resource "azurerm_mysql_server" "example" {
   infrastructure_encryption_enabled = true
   public_network_access_enabled     = true
   ssl_enforcement_enabled           = false
+  tags = {
+    yor_trace = "d4920062-5064-4636-a3c9-5885335c9aa9"
+  }
 }
