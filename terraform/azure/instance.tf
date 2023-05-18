@@ -25,6 +25,9 @@ resource azurerm_linux_virtual_machine "linux_machine" {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
+  tags = {
+    yor_trace = "96b5bfe7-167f-42c5-b012-2d34552d3803"
+  }
 }
 
 resource azurerm_windows_virtual_machine "windows_machine" {
@@ -45,5 +48,8 @@ resource azurerm_windows_virtual_machine "windows_machine" {
     offer     = "WindowsServer"
     sku       = "2016-Datacenter"
     version   = "latest"
+  }
+  tags = {
+    yor_trace = "a462304a-56d8-4f32-9d65-780760243c0f"
   }
 }
